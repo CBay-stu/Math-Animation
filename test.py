@@ -1,10 +1,18 @@
 from manim import *
 
 
-# Just drawing a circle in manim
+# Just drawing the squid game to test
 
-class CreateCircle(Scene):
+class SquidGameLogo(Scene):
     def construct(self):
-        circle = Circle()  # create a circle
-        circle.set_fill(PINK, opacity=0.5)  # set the color and transparency
-        self.play(Create(circle))  # show the circle on screen
+        
+        square = Square()
+        triangle = Triangle()
+
+        square.set_fill(RED, opacity=0.5)
+        triangle.set_fill(GREEN, opacity=0.5)
+
+        square.shift(DOWN)
+        triangle.next_to(square, UP, buff=0.5)
+
+        self.play(FadeIn(square), FadeIn(triangle))
